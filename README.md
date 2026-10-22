@@ -10,7 +10,7 @@ This repository serves as a personal knowledge base to track my progress, streng
 
 | No. | Topic | |
 |:---:|---|---|
-| 01 | [Statement Fundamentals](./01-select-statement.sql) | SELECT, SELECT DISTINCT, COUNT, SELECT WHERE, ORDER BY, LIMIT |
+| 01 | [Statement Fundamentals](./01-select-statement.sql) | SELECT, SELECT DISTINCT, COUNT, SELECT WHERE, ORDER BY, LIMIT, BETWEEN, IN, LIKE, ILIKE |
 
 ---
 
