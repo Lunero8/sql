@@ -1,0 +1,8 @@
+-- Aggregate Functions:
+    -- Aggregate functions used to take multiple inputs and return a single output.
+    -- Most common Aggregate Functions:
+        -- AVG()    - returns average value
+        -- COUNT()  - returns number of values
+        -- MAX()    - returns maximum value
+        -- MIN()    - returns minimum value
+        -- SUM()    - returns the sum of all values
