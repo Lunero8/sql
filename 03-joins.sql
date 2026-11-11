@@ -45,3 +45,29 @@
     INNER JOIN customer
     ON payment.customer_id = customer.customer_id
     ORDER BY customer_id;
+
+-- FULL OUTER JOIN:
+    -- Returns all records from both tables (combines matched rows, plus unmatched rows from both sides).
+    -- If a row doesn't find a partner in the other table, SQL just leaves those missing spots blank (NULL).
+    SELECT * FROM tablesA
+    FULL OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+
+    SELECT * FROM registrations
+    FULL OUTER JOIN logins
+    ON registrations.name = logins.name;
+
+    -- FULL OUTER JOIN with WHERE statement (get rows not found in both tables)
+    SELECT * FROM tablesA
+    FULL OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+    WHERE tablesA.id IS null OR tablesB.id IS null;
+
+    SELECT * FROM customer 
+    FULL OUTER JOIN payment
+    ON customer.customer_id = payment.customer_id
+
+    SELECT * FROM customer 
+    FULL OUTER JOIN payment
+    ON customer.customer_id = payment.customer_id
+    WHERE customer.customer_id IS null OR payment.payment_id IS null;
