@@ -110,3 +110,12 @@
     LEFT OUTER JOIN logins
     ON registrations.name = logins.name
     WHERE registrations.log_id IS null;
+
+-- UNION:
+    -- UNION operator is used to combine the result-set of two or more SELECT statements.
+    -- It basically serves to directly concatenate two results together, essentially pasting them together.
+    -- return rows on same column, pasting the rows of the second query directly underneath the first
+    -- Rule: The queries must have the same number of columns with similar data types.
+    SELECT column_name(s) FROM tables1
+    UNION
+    SELECT column_name(s) FROM tables2;
