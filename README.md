@@ -12,7 +12,7 @@ This repository serves as a personal knowledge base to track my progress, streng
 |:---:|---|---|
 | 01 | [Statement Fundamentals](./01-statement-fundamentals.sql) | SELECT, SELECT DISTINCT, COUNT, SELECT WHERE, ORDER BY, LIMIT, BETWEEN, IN, LIKE, ILIKE |
 | 02 | [Group By Statement](./02-group-by-statement.sql) | Aggregate Functions: AVG, COUNT, MAX, MIN, SUM;, ROUND, GROUP BY, DATE, HAVING |
-| 03 | [Joins](./03-joins.sql) | AS, INNER JOIN, OUTER JOINs: FULL OUTER JOIN, LEFT OUTER JOIN |
+| 03 | [Joins](./03-joins.sql) | AS, INNER JOIN, OUTER JOINs: FULL OUTER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN |
 
 ---
 

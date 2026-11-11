@@ -93,3 +93,20 @@
     LEFT OUTER JOIN logins
     ON registrations.name = logins.name
     WHERE logins.log_id IS null;
+
+-- RIGHT OUTER JOIN: or (RIGHT JOIN)
+    -- RIGHT OUTER JOIN is the same as a LEFT OUTER JOIN, expect the tables are switched.
+    SELECT * FROM tablesA
+    LEFT OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+
+    -- RIGHT OUTER JOIN with WHERE statement (get rows unique to right or second table)
+    SELECT * FROM tablesA
+    LEFT OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+    WHERE tablesA.id IS null;
+
+    SELECT * FROM registrations
+    LEFT OUTER JOIN logins
+    ON registrations.name = logins.name
+    WHERE registrations.log_id IS null;
