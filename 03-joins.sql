@@ -40,3 +40,8 @@
     SELECT reg_id, logins.name, log_id FROM registrations
     INNER JOIN logins
     ON registrations.name = logins.name
+
+    SELECT  DISTINCT customer.customer_id, email FROM payment
+    INNER JOIN customer
+    ON payment.customer_id = customer.customer_id
+    ORDER BY customer_id;
