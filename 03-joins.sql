@@ -71,3 +71,25 @@
     FULL OUTER JOIN payment
     ON customer.customer_id = payment.customer_id
     WHERE customer.customer_id IS null OR payment.payment_id IS null;
+
+-- LEFT OUTER JOIN: or (LEFT JOIN)
+    -- A LEFT OUTER JOIN results in the set of records that are in the left table, if there is no match with the right tabel, the result are null.
+    -- Return everything from first table, and return rows that matched with first table from second table. And empty are fill with null.
+    SELECT * FROM tablesA
+    LEFT OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+
+    SELECT * FROM registrations
+    LEFT OUTER JOIN logins
+    ON registrations.name = logins.name
+
+    -- LEFT OUTER JOIN with WHERE statement (get rows unique to left or first table)
+    SELECT * FROM tablesA
+    LEFT OUTER JOIN tablesB
+    ON tablesA.col_match = tablesB.col_match
+    WHERE tablesB.id IS null;
+
+    SELECT * FROM registrations
+    LEFT OUTER JOIN logins
+    ON registrations.name = logins.name
+    WHERE logins.log_id IS null;
