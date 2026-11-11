@@ -26,3 +26,17 @@
     HAVING SUM(amount) > 100;
 
 -- INNER JOIN:
+    -- INNER JOIN will result with the set of records that match in both tables.
+    -- table order won't matter in an INNER JOIN
+    -- JOIN without the INNER, PostgreSQL will treat it as an INNER JOIN
+    SELECT * FROM tablesA
+    INNER JOIN tablesB 
+    ON tablesA.col_match = tablesB.col_match
+
+    SELECT * FROM registrations
+    INNER JOIN logins
+    ON registrations.name = logins.name
+
+    SELECT reg_id, logins.name, log_id FROM registrations
+    INNER JOIN logins
+    ON registrations.name = logins.name
