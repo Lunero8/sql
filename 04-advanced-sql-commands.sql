@@ -58,3 +58,12 @@
 
     -- Data Type Formatting Functions
     -- https://www.postgresql.org/docs/12/functions-formatting.html
+
+-- Mathematical Functions:
+    -- https://www.postgresql.org/docs/12/functions-math.html
+    SELECT rate / replacement_cost FROM product;                -- 0.33288859239492995330
+    SELECT ROUND(rate/replacement_cost) FROM product;           -- 0
+    SELECT ROUND(rate/replacement_cost, 2) FROM product;        -- 0.33
+    SELECT ROUND(rate/replacement_cost, 2)*100 FROM product;    -- 33.00
+    
+    SELECT 0.1 * cost AS profit FROM product
