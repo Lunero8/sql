@@ -55,3 +55,6 @@
     SELECT TO_CHAR(payment_date, 'MON/DD/YYYY') FROM payment;   -- FEB/15/2007
     SELECT TO_CHAR(payment_date, 'mon/dd/YYYY') FROM payment;   -- feb/15/2007
     SELECT TO_CHAR(payment_date, 'Mon/dd/YYYY') FROM payment;   -- Feb/15/2007
+
+    -- Data Type Formatting Functions
+    -- https://www.postgresql.org/docs/12/functions-formatting.html
