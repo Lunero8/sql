@@ -67,3 +67,24 @@
     SELECT ROUND(rate/replacement_cost, 2)*100 FROM product;    -- 33.00
     
     SELECT 0.1 * cost AS profit FROM product
+
+-- String Functions and Operations:
+    -- https://www.postgresql.org/docs/9.1/functions-string.html
+
+    -- PostgreSQL provides a variety of string functions and operators that allow us to edit, combine, and alter text data columns
+
+    SELECT LENGTH(first_name) FROM customer;        -- 5
+
+    -- String concatenation
+    SELECT first_name || last_name FROM customer:           -- JaredEly
+    SELECT first_name || '' || last_name FROM customer;     -- JaredEly
+    SELECT first_name || ' ' || last_name FROM customer;    -- Jared Ely
+
+    SELECT first_name || ' ' || last_name AS full_name FROM customer;
+
+    SELECT UPPER(first_name) || ' ' || UPPER(last_name) AS full_name FROM customer;     -- JARED ELY
+
+    SELECT first_name || last_name || '@gmail.com' FROM customer;   -- JaredEly@gmail.com
+
+    SELECT LEFT(first_name, 1) || LEFT(last_name, 1) || '@gmail.com' AS first_char_mail FROM customer;                      -- JE@gmail.com
+    SELECT LOWER(LEFT(first_name, 1)) || LOWER(LEFT(last_name, 1)) || '@gmail.com' AS custom_mail FROM customer;            -- je@gmail.com
