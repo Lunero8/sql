@@ -88,3 +88,25 @@
 
     SELECT LEFT(first_name, 1) || LEFT(last_name, 1) || '@gmail.com' AS first_char_mail FROM customer;                      -- JE@gmail.com
     SELECT LOWER(LEFT(first_name, 1)) || LOWER(LEFT(last_name, 1)) || '@gmail.com' AS custom_mail FROM customer;            -- je@gmail.com
+
+-- SubQuery:
+    -- Sub Query allows to construct complex queries, essentially performing a query on the results of another query.
+    -- The syntax is straightforward and involves two SELECT statements.
+
+    SELECT student, grade FROM test_scores
+    WHERE grade > (SELECT AVG(grade) FROM test_scores);
+
+    -- The subquery is performed first since it is inside the parenthesis.
+    -- Can also use the IN operator in conjunction with a subquery to check against multiple results returned.
+    SELECT student, grade FROM test_scores
+    WHERE student IN (SELECT student FROM honor_roll_table);
+
+    SELECT student, grade FROM test_scores
+    WHERE student IN (('Name1', 'Name2', 'Name3'));
+
+-- EXISTS():
+    -- EXISTS operator is used to test for existence of rows in a subquery.
+    -- A subquery is passed in the EXISTS() function to check if any rows are returned with the subquery.
+
+    SELECT column_name FROM table_name
+    WHERE EXISTS(SELECT column_name FROM table_name WHERE condition);
