@@ -124,3 +124,13 @@
 
     SELECT first_name, last_name FROM customer AS c
     WHERE NOT EXISTS(SELECT * FROM payment AS p WHERE p.customer_id = c.customer_id AND amount > 11)
+
+-- Self-Join:
+    -- A self-join is a query in which a table is joined to itself.
+    -- Self-joins are useful for comparing values in a column of rows within the same table.
+
+    SELECT tableA.col, tableB.col FROM tables AS tableA
+    JOIN tables AS tableB ON tableA.some_col = tableB.other_col
+
+    SELECT emp.name, report.name AS rep FROM employees AS emp
+    JOIN employees AS report ON emp.emp_id = report.report_id;
