@@ -104,9 +104,23 @@
     SELECT student, grade FROM test_scores
     WHERE student IN (('Name1', 'Name2', 'Name3'));
 
+    SELECT product_name, price FROM product
+    WHERE price > (SELECT AVG(price) FROM product);
+
+    SELECT product_id, product_name FROM product
+    WHERE product_id IN (SELECT inventory.product_id FROM store
+    INNER JOIN inventory ON inventory.inventory_id = store.inventory_id 
+    WHERE expire_date BETWEEN '2005-05-29' AND '2005-05-30');
+
 -- EXISTS():
     -- EXISTS operator is used to test for existence of rows in a subquery.
     -- A subquery is passed in the EXISTS() function to check if any rows are returned with the subquery.
 
     SELECT column_name FROM table_name
     WHERE EXISTS(SELECT column_name FROM table_name WHERE condition);
+
+    SELECT first_name, last_name FROM customer AS c
+    WHERE EXISTS(SELECT * FROM payment AS p WHERE p.customer_id = c.customer_id AND amount > 11)
+
+    SELECT first_name, last_name FROM customer AS c
+    WHERE NOT EXISTS(SELECT * FROM payment AS p WHERE p.customer_id = c.customer_id AND amount > 11)
